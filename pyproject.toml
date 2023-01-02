@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "aiomcnet"
+version = "0.1.0"
+description = ""
+authors = ["MatweyCat <php.prog03@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
