@@ -2,11 +2,11 @@
 name = "aiomcnet"
 version = "0.1.0"
 description = ""
-authors = ["MatweyCat <php.prog03@gmail.com>"]
+authors = ["WavyCat"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.10"
 
 
 [build-system]
