@@ -6,8 +6,7 @@ class Client:
     def __init__(self, timeout: int = 60, loop: asyncio.AbstractEventLoop | None = None,
                  formatting: NoneFormat = TerminalFormat):
         if timeout <= 0:
-            # TODO: Add custom exception
-            raise Exception('The timeout cannot be less than or equal to zero.')
+            raise AttributeError('The timeout cannot be less than or equal to zero.')
 
         self.timeout = timeout
         self.loop = loop
@@ -29,18 +28,15 @@ class Client:
             data = task.result()
             writer.close()
         else:
-            # TODO: Add custom exception
             writer.close()
             raise TimeoutError('Timeout')
 
         end = asyncio.get_running_loop().time()
 
         if data == b'':
-            # TODO: Add custom exception
-            raise Exception('The server did not respond')
+            raise ConnectionError('The server did not respond')
         elif data[0] != 255:
-            # TODO: Add custom exception
-            raise Exception('Incorrect response')
+            raise ConnectionError('Incorrect response')
 
         payload = data[3:].decode('utf-16be').split('\x00')
         motd = await self.formatting(payload[3]).build_text()
