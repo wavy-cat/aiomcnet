@@ -57,9 +57,9 @@ async def get_server_with_formatting(address):
 
 ## TODO
 
-| Functionality  | Status       |
-|----------------|--------------|
-| Ping           | Ready        |
-| Query          | In Progress  |
-| RCON           | Planned      |
-| Ping Bedrock   | Planned      |
+| Functionality  | Status      |
+|----------------|-------------|
+| Ping           | In Progress |
+| Query          | Planned     |
+| RCON           | Planned     |
+| Ping Bedrock   | Planned     |
